@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>como</title>
+<meta name="description" content="Your Mac's Claude Code and Codex, on your phone.">
+<meta property="og:title" content="como">
+<meta property="og:description" content="Your Mac's Claude Code and Codex, on your phone.">
+<meta property="og:image" content="assets/icon.png">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--
+  como's landing page. Every text has data-t="key"; TEXT below holds it in Korean (the original),
+  English, Japanese, Portuguese (Brazil), German and French. The page picks ?lang=…, else the
+  browser's first language, else English.
+  Downloads: MAC_DMG is where the notarized dmg will live; the App Store link works once the app is out.
+-->
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="">como</a>
+    <div class="grow"></div>
+    <select class="lang" id="lang" aria-label="Language">
+      <option value="ko">한국어</option>
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+      <option value="pt">Português</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+    </select>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1 data-t="hero.title"></h1>
+        <p class="lead" data-t="hero.lead"></p>
+        <div class="cta">
+          <a class="btn primary" id="mac" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.2-1.2 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.8-1.1-2.8-4.2zM14 5.2c.7-.8 1.2-2 1-3.2-1 0-2.3.7-3 1.5-.7.8-1.2 1.9-1.1 3.1 1.2.1 2.3-.6 3.1-1.4z"/></svg>
+            <span data-t="cta.mac"></span>
+          </a>
+          <a class="btn secondary" id="ios" href="https://apps.apple.com/app/id6825461690">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+            <span data-t="cta.ios"></span>
+          </a>
+        </div>
+        <div class="meta" data-t="hero.meta"></div>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <div class="glow"></div>
+        <img src="assets/mascot-thinking.png" alt="">
+        <div class="toast"><img src="assets/icon.png" alt=""><div><b data-t="toast.title"></b><span data-t="toast.body"></span></div></div>
+      </div>
+    </div>
+
+    <section>
+      <h2 data-t="why.title"></h2>
+      <div class="grid">
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg></div><h3 data-t="f1.t"></h3><p data-t="f1.d"></p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><h3 data-t="f2.t"></h3><p data-t="f2.d"></p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><h3 data-t="f3.t"></h3><p data-t="f3.d"></p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div><h3 data-t="f4.t"></h3><p data-t="f4.d"></p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3 data-t="f5.t"></h3><p data-t="f5.d"></p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div><h3 data-t="f6.t"></h3><p data-t="f6.d"></p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-t="how.title"></h2>
+      <ol class="steps">
+        <li><b data-t="s1.t"></b><span data-t="s1.d"></span></li>
+        <li><b data-t="s2.t"></b><span data-t="s2.d"></span></li>
+        <li><b data-t="s3.t"></b><span data-t="s3.d"></span></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 data-t="req.title"></h2>
+      <div class="req">
+        <div><b>Mac</b><span data-t="req.mac"></span></div>
+        <div><b>iPhone</b><span data-t="req.ios"></span></div>
+        <div><b>Claude Code · Codex</b><span data-t="req.agent"></span></div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 data-t="faq.title"></h2>
+      <details><summary data-t="q1"></summary><p data-t="a1"></p></details>
+      <details><summary data-t="q2"></summary><p data-t="a2"></p></details>
+      <details><summary data-t="q3"></summary><p data-t="a3"></p></details>
+      <details><summary data-t="q4"></summary><p data-t="a4"></p></details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="row">
+      <a id="privacy" href="privacy.html" data-t="foot.privacy"></a>
+      <span><span data-t="foot.contact"></span> <a href="mailto:misoarchived@gmail.com">misoarchived@gmail.com</a></span>
+      <span>© 2026 Matthew Kim</span>
+    </div>
+    <p class="note" data-t="foot.note"></p>
+  </footer>
+</div>
+
+<script>
+const MAC_DMG = 'downloads/como-1.0.0-arm64.dmg';
+
+const TEXT = {
+  'hero.title': {
+    ko: '내 Mac의 Claude Code·Codex를, 폰에서.',
+    en: "Your Mac's Claude Code and Codex, on your phone.",
+    ja: 'MacのClaude Code・Codexを、スマホから。',
+    pt: 'O Claude Code e o Codex do seu Mac, no celular.',
+    de: 'Claude Code und Codex auf deinem Mac – vom Handy aus.',
+    fr: 'Claude Code et Codex de votre Mac, sur votre téléphone.',
+  },
+  'hero.lead': {
+    ko: '어디서 시작한 대화든 폰에서 이어 보고, 승인하고, 다음 지시를 보내요. 사용 한도가 끝나도 일이 멈추지 않게.',
+    en: 'Follow any conversation from your phone, wherever it started. Approve, answer and send the next message. And keep the work going when a usage limit runs out.',
+    ja: 'どこで始めた会話でもスマホで続きを見て、承認して、次の指示を送れます。使用上限に達しても作業は止まりません。',
+    pt: 'Acompanhe qualquer conversa pelo celular, onde quer que ela tenha começado. Aprove, responda e mande a próxima mensagem. E siga trabalhando quando um limite de uso acabar.',
+    de: 'Verfolge jede Unterhaltung vom Handy aus, egal wo sie begonnen hat. Gib frei, antworte und schick die nächste Nachricht. Und arbeite weiter, wenn ein Nutzungslimit erreicht ist.',
+    fr: "Suivez n'importe quelle conversation depuis votre téléphone, où qu'elle ait commencé. Approuvez, répondez et envoyez le message suivant. Et continuez quand une limite d'utilisation est atteinte.",
+  },
+  'cta.mac': { ko: 'Mac용 내려받기', en: 'Download for Mac', ja: 'Mac版をダウンロード', pt: 'Baixar para Mac', de: 'Für Mac laden', fr: 'Télécharger pour Mac' },
+  'cta.ios': { ko: 'App Store에서 받기', en: 'Get it on the App Store', ja: 'App Storeで入手', pt: 'Baixar na App Store', de: 'Im App Store laden', fr: "Télécharger sur l'App Store" },
+  'hero.meta': {
+    ko: '무료 · Apple Silicon Mac(macOS 13 이상) · iPhone(iOS 16.4 이상)',
+    en: 'Free · Apple silicon Mac (macOS 13 or later) · iPhone (iOS 16.4 or later)',
+    ja: '無料 · Appleシリコン搭載Mac(macOS 13以降) · iPhone(iOS 16.4以降)',
+    pt: 'Grátis · Mac com Apple Silicon (macOS 13 ou posterior) · iPhone (iOS 16.4 ou posterior)',
+    de: 'Kostenlos · Mac mit Apple Chip (macOS 13 oder neuer) · iPhone (iOS 16.4 oder neuer)',
+    fr: "Gratuit · Mac avec puce Apple (macOS 13 ou ultérieur) · iPhone (iOS 16.4 ou ultérieur)",
+  },
+  'toast.title': { ko: '승인이 필요해요', en: 'Needs your approval', ja: '承認が必要です', pt: 'Precisa da sua aprovação', de: 'Braucht deine Freigabe', fr: 'Approbation requise' },
+  'toast.body': { ko: 'Claude Code · 명령 실행 · npm test', en: 'Claude Code · Run command · npm test', ja: 'Claude Code · コマンド実行 · npm test', pt: 'Claude Code · Executar comando · npm test', de: 'Claude Code · Befehl ausführen · npm test', fr: 'Claude Code · Exécuter la commande · npm test' },
+
+  'why.title': { ko: '평소처럼 쓰고, 폰으로 이어 가요', en: 'Work as usual. Carry on from your phone.', ja: 'いつも通り使って、スマホで続ける', pt: 'Trabalhe como sempre. Continue pelo celular.', de: 'Arbeite wie gewohnt. Mach am Handy weiter.', fr: "Travaillez comme d'habitude. Continuez sur votre téléphone." },
+  'f1.t': { ko: '감싸지 않아요', en: 'No wrapper', ja: 'ラップしない', pt: 'Sem embrulhar nada', de: 'Kein Wrapper', fr: "Rien à envelopper" },
+  'f1.d': {
+    ko: 'Claude 앱, Codex 앱, 터미널. 어디서 시작한 대화든 그대로 보여요. 새 명령을 배우지 않아도 돼요.',
+    en: "Claude app, Codex app or Terminal: conversations show up wherever they started. No new command to learn.",
+    ja: 'Claudeアプリ、Codexアプリ、ターミナル。どこで始めた会話もそのまま表示されます。新しいコマンドは覚えなくて大丈夫です。',
+    pt: 'App Claude, app Codex ou Terminal: as conversas aparecem onde quer que tenham começado. Nenhum comando novo para aprender.',
+    de: 'Claude-App, Codex-App oder Terminal: Unterhaltungen erscheinen, egal wo sie begonnen haben. Kein neuer Befehl nötig.',
+    fr: "App Claude, app Codex ou Terminal : les conversations apparaissent où qu'elles aient commencé. Aucune nouvelle commande à apprendre.",
+  },
+  'f2.t': { ko: '폰에서 승인', en: 'Approve from your phone', ja: 'スマホで承認', pt: 'Aprove pelo celular', de: 'Freigabe vom Handy', fr: 'Approuvez depuis le téléphone' },
+  'f2.d': {
+    ko: '에이전트가 허락을 구하면 알림이 와요. 폰에서 바로 허용하거나 거절해요.',
+    en: "When an agent asks for permission, you get a notification. Allow or deny it right there.",
+    ja: 'エージェントが許可を求めると通知が届きます。スマホでそのまま許可・拒否できます。',
+    pt: 'Quando um agente pede permissão, você recebe uma notificação. Permita ou negue ali mesmo.',
+    de: 'Wenn ein Agent um Erlaubnis bittet, bekommst du eine Mitteilung. Erlaube oder lehne direkt ab.',
+    fr: 'Quand un agent demande une autorisation, vous recevez une notification. Autorisez ou refusez sur-le-champ.',
+  },
+  'f3.t': { ko: '한도가 끝나도 이어서', en: 'Keep going past limits', ja: '上限に達しても続ける', pt: 'Siga além dos limites', de: 'Weiter trotz Limit', fr: 'Continuez malgré les limites' },
+  'f3.d': {
+    ko: 'Claude 한도가 차면 Codex로 넘기거나 다른 모델로 바꿔서 같은 일을 이어 가요.',
+    en: 'When Claude hits its limit, hand off to Codex or switch models and carry on with the same work.',
+    ja: 'Claudeの上限に達したら、Codexに引き継いだり別のモデルに切り替えたりして同じ作業を続けられます。',
+    pt: 'Quando o Claude atinge o limite, passe para o Codex ou troque de modelo e continue o mesmo trabalho.',
+    de: 'Ist Claudes Limit erreicht, übergib an Codex oder wechsle das Modell und arbeite an derselben Sache weiter.',
+    fr: 'Quand Claude atteint sa limite, transférez à Codex ou changez de modèle et poursuivez le même travail.',
+  },
+  'f4.t': { ko: '노치와 대시보드', en: 'Notch and dashboard', ja: 'ノッチとダッシュボード', pt: 'Notch e painel', de: 'Notch und Dashboard', fr: 'Encoche et tableau de bord' },
+  'f4.d': {
+    ko: '지금 일하는 중인지, 사용 한도가 얼마나 남았는지 Mac 노치와 대시보드에서 한눈에 봐요.',
+    en: "See at a glance what's working and how much of your usage limits is left, in your Mac's notch and dashboard.",
+    ja: '今作業中か、使用上限があとどれだけ残っているかをMacのノッチとダッシュボードでひと目で確認できます。',
+    pt: 'Veja de relance o que está em andamento e quanto resta dos seus limites de uso, no notch e no painel do Mac.',
+    de: 'Sieh auf einen Blick, was gerade läuft und wie viel deiner Nutzungslimits übrig ist – in der Notch und im Dashboard deines Macs.',
+    fr: "Voyez d'un coup d'œil ce qui tourne et ce qu'il reste de vos limites d'utilisation, dans l'encoche et le tableau de bord du Mac.",
+  },
+  'f5.t': { ko: '서버 없이, 종단 간 암호화', en: 'No servers, end-to-end encrypted', ja: 'サーバーなし、エンドツーエンド暗号化', pt: 'Sem servidores, com criptografia de ponta a ponta', de: 'Keine Server, Ende-zu-Ende-verschlüsselt', fr: 'Sans serveur, chiffré de bout en bout' },
+  'f5.d': {
+    ko: '폰과 Mac 사이는 종단 간 암호화돼요. 밖에서 쓸 때도 내 Cloudflare 계정의 중계만 거쳐요. 우리는 내 대화를 볼 수 없어요.',
+    en: "Everything between your phone and Mac is end-to-end encrypted. Away from home it only passes through a relay in your own Cloudflare account. We can't see your conversations.",
+    ja: 'スマホとMacの間はエンドツーエンドで暗号化されます。外出先でも、あなた自身のCloudflareアカウントの中継だけを通ります。私たちはあなたの会話を見られません。',
+    pt: 'Tudo entre o celular e o Mac tem criptografia de ponta a ponta. Fora de casa, passa só por um relay na sua própria conta da Cloudflare. Nós não vemos suas conversas.',
+    de: 'Alles zwischen Handy und Mac ist Ende-zu-Ende-verschlüsselt. Unterwegs läuft es nur über ein Relay in deinem eigenen Cloudflare-Konto. Wir können deine Unterhaltungen nicht sehen.',
+    fr: "Tout ce qui passe entre le téléphone et le Mac est chiffré de bout en bout. À l'extérieur, cela ne transite que par un relais sur votre propre compte Cloudflare. Nous ne voyons pas vos conversations.",
+  },
+  'f6.t': { ko: '6개 언어', en: 'Six languages', ja: '6言語', pt: 'Seis idiomas', de: 'Sechs Sprachen', fr: 'Six langues' },
+  'f6.d': { ko: '한국어, English, 日本語, Português, Deutsch, Français', en: '한국어, English, 日本語, Português, Deutsch, Français', ja: '한국어, English, 日本語, Português, Deutsch, Français', pt: '한국어, English, 日本語, Português, Deutsch, Français', de: '한국어, English, 日本語, Português, Deutsch, Français', fr: '한국어, English, 日本語, Português, Deutsch, Français' },
+
+  'how.title': { ko: '시작은 1분', en: 'One minute to start', ja: '1分で始められます', pt: 'Um minuto para começar', de: 'In einer Minute startklar', fr: 'Une minute pour commencer' },
+  's1.t': { ko: 'Mac 앱 설치', en: 'Install the Mac app', ja: 'Macアプリをインストール', pt: 'Instale o app no Mac', de: 'Mac-App installieren', fr: "Installez l'app Mac" },
+  's1.d': { ko: 'Claude Code·Codex에 como를 한 번에 연결해요.', en: 'It connects como to Claude Code and Codex in one step.', ja: 'Claude Code・Codexにcomoを一度で接続します。', pt: 'Ele conecta o como ao Claude Code e ao Codex de uma vez.', de: 'Sie verbindet como in einem Schritt mit Claude Code und Codex.', fr: 'Elle connecte como à Claude Code et Codex en une fois.' },
+  's2.t': { ko: 'QR 한 번', en: 'Scan one QR code', ja: 'QRを1回読み取る', pt: 'Leia um QR code', de: 'Einen QR-Code scannen', fr: 'Scannez un QR code' },
+  's2.d': { ko: 'iPhone 카메라로 Mac에 뜬 QR을 비추면 연결돼요. 회원 가입은 없어요.', en: "Point your iPhone's camera at the QR code on your Mac. No sign-up.", ja: 'Macに表示されたQRをiPhoneのカメラで読み取ると接続されます。会員登録は不要です。', pt: 'Aponte a câmera do iPhone para o QR code no Mac. Sem cadastro.', de: 'Halte die iPhone-Kamera auf den QR-Code am Mac. Keine Registrierung.', fr: "Visez le QR code du Mac avec l'appareil photo de l'iPhone. Sans inscription." },
+  's3.t': { ko: '평소처럼 쓰기', en: 'Work as usual', ja: 'いつも通り使う', pt: 'Trabalhe como sempre', de: 'Wie gewohnt arbeiten', fr: "Travaillez comme d'habitude" },
+  's3.d': { ko: '자리를 비워도 폰에 알림이 오고, 거기서 이어서 해요.', en: "Step away and your phone gets notified. Pick it up from there.", ja: '席を外してもスマホに通知が届き、そこから続けられます。', pt: 'Saia da mesa e o celular avisa. Continue de lá.', de: 'Geh weg, und dein Handy meldet sich. Mach dort weiter.', fr: 'Éloignez-vous : votre téléphone vous prévient. Reprenez de là.' },
+
+  'req.title': { ko: '필요한 것', en: 'What you need', ja: '必要なもの', pt: 'Do que você precisa', de: 'Was du brauchst', fr: 'Ce qu’il vous faut' },
+  'req.mac': { ko: 'Apple Silicon Mac, macOS 13 이상', en: 'Apple silicon Mac, macOS 13 or later', ja: 'Appleシリコン搭載Mac、macOS 13以降', pt: 'Mac com Apple Silicon, macOS 13 ou posterior', de: 'Mac mit Apple Chip, macOS 13 oder neuer', fr: 'Mac avec puce Apple, macOS 13 ou ultérieur' },
+  'req.ios': { ko: 'iOS 16.4 이상', en: 'iOS 16.4 or later', ja: 'iOS 16.4以降', pt: 'iOS 16.4 ou posterior', de: 'iOS 16.4 oder neuer', fr: 'iOS 16.4 ou ultérieur' },
+  'req.agent': { ko: '둘 중 하나 이상 설치하고 로그인해 두면 돼요', en: 'At least one of them installed and signed in', ja: 'どちらか1つ以上をインストールしてサインインしておけばOKです', pt: 'Pelo menos um deles instalado e com login feito', de: 'Mindestens eines davon installiert und angemeldet', fr: "Au moins l'un des deux installé et connecté" },
+
+  'faq.title': { ko: '자주 묻는 질문', en: 'Questions', ja: 'よくある質問', pt: 'Perguntas', de: 'Fragen', fr: 'Questions' },
+  'q1': { ko: '무료인가요?', en: 'Is it free?', ja: '無料ですか?', pt: 'É grátis?', de: 'Ist es kostenlos?', fr: "C'est gratuit ?" },
+  'a1': { ko: '네, 지금은 무료예요.', en: 'Yes, it is free for now.', ja: 'はい、現在は無料です。', pt: 'Sim, por enquanto é grátis.', de: 'Ja, im Moment ist es kostenlos.', fr: "Oui, c'est gratuit pour l'instant." },
+  'q2': { ko: '내 코드나 대화를 보나요?', en: 'Do you see my code or conversations?', ja: '私のコードや会話を見ますか?', pt: 'Vocês veem meu código ou minhas conversas?', de: 'Seht ihr meinen Code oder meine Unterhaltungen?', fr: 'Voyez-vous mon code ou mes conversations ?' },
+  'a2': {
+    ko: '아니요. 대화는 내 Mac에 있고, 폰과는 종단 간 암호화로만 오가요. 운영하는 서버도 없어요.',
+    en: "No. Conversations stay on your Mac and only travel to your phone end-to-end encrypted. We don't run any servers.",
+    ja: 'いいえ。会話はあなたのMacにあり、スマホとはエンドツーエンド暗号化でのみやり取りします。運営するサーバーもありません。',
+    pt: 'Não. As conversas ficam no seu Mac e só vão ao celular com criptografia de ponta a ponta. Não mantemos servidores.',
+    de: 'Nein. Unterhaltungen bleiben auf deinem Mac und gehen nur Ende-zu-Ende-verschlüsselt an dein Handy. Wir betreiben keine Server.',
+    fr: "Non. Les conversations restent sur votre Mac et ne vont vers le téléphone que chiffrées de bout en bout. Nous n'exploitons aucun serveur.",
+  },
+  'q3': { ko: 'Claude·ChatGPT 계정이 따로 필요해요?', en: 'Do I need a separate Claude or ChatGPT account?', ja: 'Claude・ChatGPTのアカウントは別に必要ですか?', pt: 'Preciso de outra conta do Claude ou do ChatGPT?', de: 'Brauche ich ein eigenes Claude- oder ChatGPT-Konto?', fr: 'Faut-il un compte Claude ou ChatGPT à part ?' },
+  'a3': {
+    ko: 'Claude Code나 Codex를 이미 쓰고 있다면 그 로그인 그대로 써요.',
+    en: "If you already use Claude Code or Codex, como uses that same sign-in.",
+    ja: 'すでにClaude CodeやCodexを使っていれば、そのサインインをそのまま使います。',
+    pt: 'Se você já usa o Claude Code ou o Codex, o como usa o mesmo login.',
+    de: 'Wenn du Claude Code oder Codex schon nutzt, verwendet como dieselbe Anmeldung.',
+    fr: 'Si vous utilisez déjà Claude Code ou Codex, como utilise la même connexion.',
+  },
+  'q4': { ko: '집 밖에서도 돼요?', en: 'Does it work away from home?', ja: '外出先でも使えますか?', pt: 'Funciona fora de casa?', de: 'Klappt es auch unterwegs?', fr: "Ça marche à l'extérieur ?" },
+  'a4': {
+    ko: '네. 무료 Cloudflare 계정에 1분이면 내 중계 서버를 올려서 LTE에서도 써요.',
+    en: 'Yes. In about a minute, como puts your own relay on a free Cloudflare account, so it works over cellular too.',
+    ja: 'はい。無料のCloudflareアカウントに約1分で自分専用の中継サーバーを置けるので、モバイル通信でも使えます。',
+    pt: 'Sim. Em cerca de um minuto, o como cria seu próprio relay numa conta grátis da Cloudflare, e funciona também na rede móvel.',
+    de: 'Ja. In etwa einer Minute richtet como dein eigenes Relay auf einem kostenlosen Cloudflare-Konto ein – dann klappt es auch im Mobilfunknetz.',
+    fr: 'Oui. En une minute environ, como installe votre propre relais sur un compte Cloudflare gratuit, et ça marche aussi en réseau mobile.',
+  },
+
+  'foot.privacy': { ko: '개인정보 처리방침', en: 'Privacy policy', ja: 'プライバシーポリシー', pt: 'Política de privacidade', de: 'Datenschutz', fr: 'Politique de confidentialité' },
+  'foot.contact': { ko: '문의', en: 'Contact', ja: 'お問い合わせ', pt: 'Contato', de: 'Kontakt', fr: 'Contact' },
+  'foot.note': {
+    ko: 'Claude Code는 Anthropic의, Codex와 ChatGPT는 OpenAI의 제품이에요. como는 이 회사들과 관련이 없어요.',
+    en: 'Claude Code is a product of Anthropic; Codex and ChatGPT are products of OpenAI. como is not affiliated with either company.',
+    ja: 'Claude CodeはAnthropic、CodexとChatGPTはOpenAIの製品です。comoはこれらの企業と提携していません。',
+    pt: 'O Claude Code é um produto da Anthropic; o Codex e o ChatGPT são produtos da OpenAI. O como não tem vínculo com essas empresas.',
+    de: 'Claude Code ist ein Produkt von Anthropic, Codex und ChatGPT sind Produkte von OpenAI. como steht in keiner Verbindung zu diesen Unternehmen.',
+    fr: "Claude Code est un produit d'Anthropic ; Codex et ChatGPT sont des produits d'OpenAI. como n'est affilié à aucune de ces entreprises.",
+  },
+};
+
+const LANGS = ['ko', 'en', 'ja', 'pt', 'de', 'fr'];
+const pick = (code) => LANGS.find((l) => String(code || '').toLowerCase().startsWith(l));
+const chosen = () => pick(new URLSearchParams(location.search).get('lang')) || pick(navigator.languages?.[0] || navigator.language) || 'en';
+
+function show(lang) {
+  document.documentElement.lang = lang;
+  for (const el of document.querySelectorAll('[data-t]')) el.textContent = TEXT[el.dataset.t]?.[lang] ?? TEXT[el.dataset.t]?.en ?? '';
+  document.title = 'como – ' + TEXT['hero.title'][lang];
+  document.getElementById('lang').value = lang;
+  document.getElementById('privacy').href = `privacy.html?lang=${lang}`;
+}
+
+document.getElementById('mac').href = MAC_DMG;
+document.getElementById('lang').addEventListener('change', (e) => {
+  const lang = e.target.value;
+  const url = new URL(location.href);
+  url.searchParams.set('lang', lang);
+  history.replaceState(null, '', url);
+  show(lang);
+});
+show(chosen());
+</script>
+</body>
+</html>
