@@ -33,6 +33,8 @@
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--ground); color: var(--ink); font: 17px/1.55 var(--font); }
+/* Korean breaks between words, not inside them. */
+:lang(ko) { word-break: keep-all; overflow-wrap: anywhere; }
 a { color: var(--accent-ink); }
 img { max-width: 100%; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 max(20px, env(safe-area-inset-left, 0px)) 0 max(20px, env(safe-area-inset-right, 0px)); }
