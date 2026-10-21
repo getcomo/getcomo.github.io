@@ -17,7 +17,7 @@
   como's landing page. Every text has data-t="key"; TEXT below holds it in Korean (the original),
   English, Japanese, Portuguese (Brazil), German and French. The page picks ?lang=…, else the
   browser's first language, else English.
-  Downloads: MAC_DMG is where the notarized dmg will live; the App Store link works once the app is out.
+  Downloads: MAC_DMG is the newest notarized dmg on GitHub Releases; the App Store link works once the app is out.
 -->
 <div class="wrap">
   <header class="top">
@@ -107,7 +107,8 @@
 </div>
 
 <script>
-const MAC_DMG = 'downloads/como-1.0.0-arm64.dmg';
+// Always the newest notarized dmg (GitHub Releases on this site's repo; each release uploads como.dmg).
+const MAC_DMG = 'https://github.com/matthewkim-11/como-site/releases/latest/download/como.dmg';
 
 const TEXT = {
   'hero.title': {
