@@ -3,13 +3,13 @@
   <channel>
     <title>como</title>
     <item>
-      <title>como 1.0.2</title>
-      <pubDate>Sat, 24 Oct 2026 17:50:56 +0000</pubDate>
-      <sparkle:version>1.0.2</sparkle:version>
-      <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+      <title>como 1.0.3</title>
+      <pubDate>Sat, 24 Oct 2026 18:11:52 +0000</pubDate>
+      <sparkle:version>1.0.3</sparkle:version>
+      <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://github.com/matthewkim-11/como-site/releases/tag/v1.0.2</sparkle:releaseNotesLink>
-      <enclosure url="https://github.com/matthewkim-11/como-site/releases/download/v1.0.2/como-1.0.2-arm64.dmg" type="application/octet-stream" sparkle:edSignature="If3/xbBbcY9C+iA9LwK2emx5i1FJnFU0aEgFsUxSSAjJEO4jNxYJY69lqqj0V+UbXQxiQ7sj3bOyec6eJ3+EAg==" length="40925315" />
+      <sparkle:releaseNotesLink>https://github.com/matthewkim-11/como-site/releases/tag/v1.0.3</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/matthewkim-11/como-site/releases/download/v1.0.3/como-1.0.3-arm64.dmg" type="application/octet-stream" sparkle:edSignature="qke2x+nG3bB6g0N35onxcayDB85o22l1y3VsTNIaopN6euep2d45lhJ2KYZOsC72pXV8Ar7gmat8nZzEP2ndCw==" length="40927500" />
     </item>
   </channel>
 </rss>
