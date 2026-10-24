@@ -49,6 +49,11 @@
           </a>
         </div>
         <div class="meta" data-t="hero.meta"></div>
+        <ol class="setup" id="steps" hidden>
+          <li data-t="steps.1"></li>
+          <li data-t="steps.2"></li>
+          <li data-t="steps.3"></li>
+        </ol>
       </div>
       <div class="stage" aria-hidden="true">
         <div class="glow"></div>
@@ -128,7 +133,19 @@ const TEXT = {
     fr: "Suivez n'importe quelle conversation depuis votre téléphone, où qu'elle ait commencé. Approuvez, répondez et envoyez le message suivant. Et continuez quand une limite d'utilisation est atteinte.",
   },
   'cta.mac': { ko: 'Mac용 내려받기', en: 'Download for Mac', ja: 'Mac版をダウンロード', pt: 'Baixar para Mac', de: 'Für Mac laden', fr: 'Télécharger pour Mac' },
-  'cta.ios': { ko: 'App Store에서 받기', en: 'Get it on the App Store', ja: 'App Storeで入手', pt: 'Baixar na App Store', de: 'Im App Store laden', fr: "Télécharger sur l'App Store" },
+  'cta.ios': { ko: 'iPhone 앱 · App Store', en: 'iPhone app · App Store', ja: 'iPhoneアプリ · App Store', pt: 'App para iPhone · App Store', de: 'iPhone-App · App Store', fr: 'App iPhone · App Store' },
+  'phone.title': { ko: '이 Mac에 como를 설치하세요', en: 'Install como on this Mac', ja: 'このMacにcomoをインストール', pt: 'Instale o como neste Mac', de: 'Installiere como auf diesem Mac', fr: 'Installez como sur ce Mac' },
+  'phone.lead': {
+    ko: 'iPhone의 como가 이 Mac과 연결하려면 Mac에도 como가 있어야 해요. 아래 버튼으로 Mac 앱을 받으세요.',
+    en: 'To connect, the como on your iPhone needs como on this Mac too. Get the Mac app with the button below.',
+    ja: 'iPhoneのcomoをこのMacとつなぐには、Macにもcomoが必要です。下のボタンからMac版を入手してください。',
+    pt: 'Para conectar, o como do seu iPhone precisa do como neste Mac também. Baixe o app para Mac no botão abaixo.',
+    de: 'Damit sich como auf deinem iPhone verbinden kann, braucht dieser Mac ebenfalls como. Lade die Mac-App mit der Taste unten.',
+    fr: "Pour se connecter, le como de votre iPhone a aussi besoin de como sur ce Mac. Téléchargez l'app Mac avec le bouton ci-dessous.",
+  },
+  'steps.1': { ko: '[Mac용 내려받기]를 눌러 como.dmg를 받아요.', en: 'Click Download for Mac to get como.dmg.', ja: '[Mac版をダウンロード]でcomo.dmgを入手します。', pt: 'Clique em Baixar para Mac para obter o como.dmg.', de: 'Klicke auf „Für Mac laden“, um como.dmg zu laden.', fr: 'Cliquez sur Télécharger pour Mac pour obtenir como.dmg.' },
+  'steps.2': { ko: 'como.dmg를 열고 como를 응용 프로그램 폴더로 끌어다 놓아요.', en: 'Open como.dmg and drag como into Applications.', ja: 'como.dmgを開き、comoをアプリケーションフォルダへドラッグします。', pt: 'Abra o como.dmg e arraste o como para Aplicativos.', de: 'Öffne como.dmg und zieh como in „Programme“.', fr: 'Ouvrez como.dmg et faites glisser como dans Applications.' },
+  'steps.3': { ko: 'como를 열면 iPhone 화면에 이 Mac이 나타나요. 누르고, Mac에 뜬 숫자 6자리를 입력하면 끝이에요.', en: 'Open como, and this Mac appears on your iPhone. Tap it and type the 6 digits shown on the Mac.', ja: 'comoを開くとiPhoneにこのMacが表示されます。タップして、Macに出る6桁の数字を入力すれば完了です。', pt: 'Abra o como e este Mac aparece no iPhone. Toque nele e digite os 6 dígitos mostrados no Mac.', de: 'Öffne como, dann erscheint dieser Mac auf deinem iPhone. Tippe ihn an und gib die 6 Ziffern vom Mac ein.', fr: 'Ouvrez como : ce Mac apparaît sur votre iPhone. Touchez-le et saisissez les 6 chiffres affichés sur le Mac.' },
   'hero.meta': {
     ko: '무료 · Apple Silicon Mac(macOS 13 이상) · iPhone(iOS 16.4 이상)',
     en: 'Free · Apple silicon Mac (macOS 13 or later) · iPhone (iOS 16.4 or later)',
@@ -253,11 +270,19 @@ function show(lang) {
   document.documentElement.lang = lang;
   for (const el of document.querySelectorAll('[data-t]')) el.textContent = TEXT[el.dataset.t]?.[lang] ?? TEXT[el.dataset.t]?.en ?? '';
   document.title = 'como – ' + TEXT['hero.title'][lang];
+  // Handed over from the iPhone app (Handoff, ?from=phone) on a Mac: just the Mac app and how to set it up.
+  if (FROM_PHONE) {
+    document.querySelector('.hero h1').textContent = TEXT['phone.title'][lang] ?? TEXT['phone.title'].en;
+    document.querySelector('.hero p.lead').textContent = TEXT['phone.lead'][lang] ?? TEXT['phone.lead'].en;
+  }
   document.getElementById('lang').value = lang;
   document.getElementById('privacy').href = `privacy.html?lang=${lang}`;
 }
 
 document.getElementById('mac').href = MAC_DMG;
+// A Mac visitor sent here by the iPhone app: the iPhone button would read as the Mac download, so it goes.
+const FROM_PHONE = new URLSearchParams(location.search).get('from') === 'phone' && !/iPhone|iPad|Android/.test(navigator.userAgent);
+if (FROM_PHONE) { document.getElementById('ios').hidden = true; document.getElementById('steps').hidden = false; }
 document.getElementById('lang').addEventListener('change', (e) => {
   const lang = e.target.value;
   const url = new URL(location.href);
